@@ -1,3 +1,4 @@
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class BMIcalculator {
@@ -11,14 +12,18 @@ public class BMIcalculator {
         System.out.print("Enter weight in pounds: ");
         double weight = input.nextDouble();
 
-        System.out.print("Enter height in pounds: ");
+        System.out.print("Enter height in inches: ");
         double height = input.nextDouble();
+
+        input.close();
 
         System.out.println("Weight: "+ weight);
         System.out.println("Height: "+ height);
 
         double bmi = weight / Math.pow(height,2) * 703;
 
-        System.out.println("Your BMI is :  "+ bmi);
+        DecimalFormat df = new DecimalFormat("0.00");
+
+        System.out.println("Your BMI is :  "+ df.format(bmi));
     }
 }
